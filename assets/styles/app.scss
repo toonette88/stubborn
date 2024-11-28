@@ -1,5 +1,10 @@
-@import '~bootstrap/scss/bootstrap';
+@use '~bootstrap/scss/bootstrap';
 
 body {
-    background-color: skyblue;
+    background-color: antiquewhite ;
+}
+
+footer{
+    background-color: azure;
+    margin : 10px;
 }

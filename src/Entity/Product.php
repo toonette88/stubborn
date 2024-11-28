@@ -52,6 +52,9 @@ class Product
     #[ORM\OneToMany(targetEntity: CartItem::class, mappedBy: 'product')]
     private Collection $quantity;
 
+    #[ORM\Column]
+    private ?bool $is_highlighted = null;
+
     public function __construct()
     {
         $this->quantity = new ArrayCollection();
@@ -208,6 +211,18 @@ class Product
                 $quantity->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isHighlighted(): ?bool
+    {
+        return $this->is_highlighted;
+    }
+
+    public function setHighlighted(bool $is_highlighted): static
+    {
+        $this->is_highlighted = $is_highlighted;
 
         return $this;
     }
